@@ -1,9 +1,15 @@
 
 
-export default function ListOfDecks() {
+export default function ListOfDecks({ decks }) {
+
+    const decksListContent = decks.map((deck, index) => (
+        <p key={index}>{deck.name}</p>
+    ))
 
     return (
-        <p>list of decks here</p>
+        <div>
+            {decksListContent}
+        </div>
     )
 
 }

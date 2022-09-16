@@ -39,11 +39,11 @@ p {
 	padding: 2em;
 }
 
-button {
+/* button {
 	width: 15em;
 	padding: 1em;
 	margin: 2em;
-}
+} */
 
 .nav-menu {
 	background-color: #555;
@@ -68,4 +68,8 @@ button {
 
 .card-md {
 	width: 300px;
+}
+
+.deck-name:hover {
+	background-color: #ddd;
 }

@@ -1,9 +1,9 @@
 
 
-export default function ListOfDecks({ decks, setSelectedDeck }) {
+export default function ListOfDecks({ decks, handleSetDeck }) {
 
     const decksListContent = decks.map((deck, index) => (
-        <div className="deck-name" key={index} onClick={setSelectedDeck(deck)}>{deck.name}</div>
+        <div className="hover-grey" key={index} onClick={() => handleSetDeck(deck)}>{deck.name}</div>
     ))
 
     return (

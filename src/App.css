@@ -70,6 +70,14 @@ p {
 	width: 300px;
 }
 
-.deck-name:hover {
+.hover-grey:hover {
 	background-color: #ddd;
+}
+
+.flex {
+	display: flex;
+}
+
+.lr-padding {
+	padding: 0, 20px;
 }

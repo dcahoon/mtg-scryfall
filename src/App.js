@@ -4,6 +4,7 @@ import RandomCard from "./RandomCard"
 import CardSearchForm from "./CardSearchForm"
 import DeckForm from "./DeckForm"
 import ListOfDecks from "./ListOfDecks"
+import DeckInfo from "./DeckInfo"
 import Menu from "./Menu"
 import {
 	Route,
@@ -37,21 +38,29 @@ function App() {
 
 	console.log("decks", decks)
 
+	const handleSetDeck = (deck) => {
+		console.log("handleSetDeck called", deck)
+		setSelectedDeck(deck)
+	}
+
 	return (
 		<div>
 			<Menu />
-			<Switch>
-				<Route path="/random">
-					<RandomCard />
-				</Route>
-				<Route path="/search">
-					<CardSearchForm />
-				</Route>
-				<Route path="/">
-					<DeckForm decks={decks} setDecks={setDecks} selectedDeck={selectedDeck} />
-					<ListOfDecks decks={decks} setSelectedDeck={setSelectedDeck} />
-				</Route>
-			</Switch>
+			<div className="flex">
+				<Switch>
+					<Route path="/random">
+						<RandomCard />
+					</Route>
+					<Route path="/search">
+						<CardSearchForm />
+					</Route>
+					<Route path="/">
+						<DeckForm decks={decks} setDecks={setDecks} />
+						<ListOfDecks decks={decks} handleSetDeck={handleSetDeck} />
+						<DeckInfo selectedDeck={selectedDeck} />
+					</Route>
+				</Switch>
+			</div>
 		</div>
 	)
 		
